@@ -46,14 +46,12 @@ class Bishop(ChessPiece):
         dx = abs(x2 - x1)
         dy = abs(y2 - y1)
 
-        # Bishop must move diagonally
         if dx != dy:
             return False
 
         step_x = 1 if x2 > x1 else -1
         step_y = 1 if y2 > y1 else -1
 
-        # Check for blocking pieces along the diagonal
         x, y = x1 + step_x, y1 + step_y
         while x != x2 and y != y2:
             if board[x][y] is not None:
@@ -61,7 +59,6 @@ class Bishop(ChessPiece):
             x += step_x
             y += step_y
 
-        # Check destination (can capture opponent but not own piece)
         target = board[x2][y2]
         if target is not None and target.color == self.color:
             return False
