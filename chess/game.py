@@ -54,7 +54,7 @@ class ChessGame:
                     self.switch_turn()
                     self.move_count += 1
             except Exception as e:
-                print(f"Неверный ввод! Ошибка: {e}")  # Invalid input! Error: [error]
+                print(f"Неверный ввод! Ошибка: {e}")  
 
 
 class ModifiedChessGame(ChessGame):
