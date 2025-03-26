@@ -51,11 +51,9 @@ class Dragon(ChessPiece):
         dx = abs(x2 - x1)
         dy = abs(y2 - y1)
 
-        # Check basic movement pattern
         if not ((dx == 3 and dy == 0) or (dx == 0 and dy == 3) or (dx == 3 and dy == 3)):
             return False
 
-        # Check path is clear
         step_x = 0 if dx == 0 else (1 if x2 > x1 else -1)
         step_y = 0 if dy == 0 else (1 if y2 > y1 else -1)
 
@@ -66,7 +64,6 @@ class Dragon(ChessPiece):
             x += step_x
             y += step_y
 
-        # Check destination
         target = board[x2][y2]
         if target is not None and target.color == self.color:
             return False
