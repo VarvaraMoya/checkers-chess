@@ -52,7 +52,6 @@ class Queen(ChessPiece):
         if not ((x1 == x2 or y1 == y2) or (dx == dy)):
             return False
 
-        # Determine direction steps
         step_x = 0 if x1 == x2 else (1 if x2 > x1 else -1)
         step_y = 0 if y1 == y2 else (1 if y2 > y1 else -1)
 
