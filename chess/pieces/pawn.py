@@ -51,19 +51,15 @@ class Pawn(ChessPiece):
         dy = abs(y2 - y1)
         direction = -1 if self.color == 'white' else 1  # White moves up, black moves down
 
-        # Forward movement (no capture)
         if dy == 0:
-            # Single square forward
             if dx == direction and board[x2][y2] is None:
                 return True
-            # Two-square initial move
             start_row = 6 if self.color == 'white' else 1
             if (x1 == start_row and dx == 2 * direction and
                     board[x2][y2] is None and board[x1 + direction][y1] is None):
                 return True
             return False
 
-        # Diagonal capture
         if dy == 1 and dx == direction:
             if board[x2][y2] is not None and board[x2][y2].color != self.color:
                 return True
