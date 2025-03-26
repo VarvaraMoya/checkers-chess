@@ -51,11 +51,9 @@ class Jester(ChessPiece):
         dx = abs(x2 - x1)
         dy = abs(y2 - y1)
 
-        # Basic movement validation (1 square max)
         if not (dx <= 1 and dy <= 1):
             return False
 
-        # Check destination (can capture opponent but not own piece)
         target = board[x2][y2]
         if target is not None and target.color == self.color:
             return False
