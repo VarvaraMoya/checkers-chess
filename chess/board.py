@@ -82,11 +82,11 @@ class ChessBoard:
         piece = self.board[x1][y1]
 
         if not piece:
-            print("Нет фигуры в начальной позиции!")  # No piece at start position
+            print("Нет фигуры в начальной позиции!") 
             return False
 
         if not piece.is_valid_move(self.board, start, end):
-            print("Недопустимый ход для этой фигуры!")  # Invalid move for this piece
+            print("Недопустимый ход для этой фигуры!") 
             return False
 
         if isinstance(piece, Jester) and self.board[x2][y2] is not None:
