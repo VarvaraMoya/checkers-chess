@@ -28,13 +28,11 @@ class CheckersBoard:
         """
         board = [[None] * 8 for _ in range(8)]
 
-        # Black pieces (top)
         for i in range(3):
             for j in range(8):
                 if (i + j) % 2 == 1:
                     board[i][j] = CheckersPiece('black')
 
-        # White pieces (bottom)
         for i in range(5, 8):
             for j in range(8):
                 if (i + j) % 2 == 1:
@@ -70,7 +68,6 @@ class CheckersBoard:
             self.board[x2][y2] = piece
             self.board[x1][y1] = None
 
-            # Check for promotion
             if (piece.color == 'white' and x2 == 0) or (piece.color == 'black' and x2 == 7):
                 piece.promote()
             return True
