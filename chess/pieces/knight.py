@@ -48,11 +48,9 @@ class Knight(ChessPiece):
         dx = abs(x2 - x1)
         dy = abs(y2 - y1)
 
-        # Check L-shaped movement pattern
         if not ((dx == 2 and dy == 1) or (dx == 1 and dy == 2)):
             return False
 
-        # Check destination (can capture opponent but not own piece)
         target = board[x2][y2]
         if target is not None and target.color == self.color:
             return False
